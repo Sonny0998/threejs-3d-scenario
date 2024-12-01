@@ -24,7 +24,8 @@
 
 		<script type="module">
 
-			import * as THREE from 'three';
+			import * as THREE from './build/three.module.js';
+
 
 			import Stats from 'three/addons/libs/stats.module.js';
 
@@ -125,7 +126,7 @@
 
 				// --------------------------------------------------------------
 				const rgbeLoader = new RGBELoader();
-				rgbeLoader.load('models/rgbe/small_harbour_sunset_4k.hdr', function (texture) {
+				rgbeLoader.load('./models/rgbe/small_harbour_sunset_4k.hdr', function (texture) {
 					texture.mapping = THREE.EquirectangularReflectionMapping;
 					scene.background = texture;
 					scene.environment = texture;
@@ -136,7 +137,7 @@
 
 				const sound = new Audio(listener);
 				const audioLoader = new AudioLoader();
-				audioLoader.load('models/rgbe/Jerusalema feat Nomcebo Zikode.mp3', function (buffer) {
+				audioLoader.load('./models/rgbe/Jerusalema feat Nomcebo Zikode.mp3', function (buffer) {
 					console.log("Audio cargado exitosamente");
 					sound.setBuffer(buffer);
 					sound.setLoop(true);
@@ -149,7 +150,7 @@
 
 			function loadAsset( asset ) {
 
-				loader.load( 'models/fbx/Hip Hop Dancing.fbx', function ( group ) {
+				loader.load( './models/fbx/Hip Hop Dancing.fbx', function ( group ) {
 
 					if ( object ) {
 
